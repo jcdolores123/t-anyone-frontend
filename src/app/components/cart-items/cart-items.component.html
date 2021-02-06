@@ -1,0 +1,43 @@
+<ng-container *ngFor="let cart of cartItems;">
+    <div class="col s12">
+        <div class="cart-items-wrapper">
+            <div class="row">
+                <div class="col s12" *ngIf="!hideButtons">
+                    <div >
+                        <input type="checkbox" id="check-{{cart?.id}}">
+                        <label id="checkbox-{{cart?.id}}" (click)="toggleCheckbox(cart)" for="check-{{cart?.id}}"></label>
+                    </div>
+                </div>
+                <div class="col s12 m5 l3">
+                    <img [src]="cart?.imgSrc" alt="">
+                </div>
+                <div class="col s12 m7 l9">
+                    <div class="row">
+                        <div class="col s12">
+                            <p class="product-name">{{cart?.name}}</p>
+                        </div>
+                        <div class="col s12">
+                            <p class="product-desc">{{cart?.description}}</p>
+                        </div>
+                        <div class="col s12">
+                            <p class="product-price">
+                                <span class="currency">PHP&nbsp;</span>
+                                {{cart?.price}}
+                            </p>
+                        </div>
+                        <div class="col s12">
+                            <p class="product-price">
+                                <span class="currency">QTY:&nbsp;</span>
+                                {{cart?.qty}}
+                            </p>
+                        </div>
+                        <div class="col s12"  *ngIf="!hideButtons">
+                            <app-edit-quantity [quantity]="cart?.qty" [productId]="cart?.id"></app-edit-quantity>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-container>

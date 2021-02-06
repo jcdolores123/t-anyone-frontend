@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+.cart-items-wrapper{
+    border: 1px $gray-color solid;
+    margin: 5px 0;
+    // height: 380px;
+    padding: 10px;
+}
+
+[type="checkbox"]+label:before{
+    height: 36px !important;
+    width: 36px !important;
+}
+
+[type="checkbox"]:checked+label:before{
+    height: 44px !important;
+    width: 24px !important;
+}

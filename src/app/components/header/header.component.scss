@@ -1,0 +1,26 @@
+
+
+.cart-icon{
+    position: relative;
+    & .cart-notif{
+        position: absolute;
+        top: 30px;
+        color: black;
+        height: 18px;
+        right: 12px;
+        width: 18px;
+        padding: 2px;
+        background: yellow;
+        border-radius: 15px;
+        & .cart-count{
+            position: absolute;
+            top: -18px;
+            right: 5px;
+            color: black;
+            font-weight: 500;
+            @media only screen and (min-width: 601px){
+                top: -22px;
+            }
+        }
+    }
+}

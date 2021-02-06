@@ -1,0 +1,22 @@
+<div class="row checkout-wrapper">
+    <div class="col s12">
+        <h3 class="text-center">CHECKOUT</h3>
+    </div>
+    <ng-container *ngIf="checkoutItems">
+        <app-cart-items [cartItems]="checkoutItems" (emitPriceBreakdown)="emitPriceBreakdown($event)" [hideButtons]="true"></app-cart-items>
+    </ng-container>
+    <div class="row total-wrapper">
+        <div class="col s6">
+            <p class="total-price">TOTAL:</p>
+        </div>
+        <div class="col s6">
+            <p class="total-price">php&nbsp;{{totalPrice}}</p>
+        </div>
+        
+    </div>
+    <div class="row checkout-wrapper">
+        <div class="col s12">
+            <a class="waves-effect waves-light btn" (click)="placeOrder();">PLACE ORDER</a>
+        </div>
+    </div>
+</div>
